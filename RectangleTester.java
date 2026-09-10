@@ -8,6 +8,6 @@ public class RectangleTester {
         System.out.println("perimeter: " + rect.calculatePerimeter());
         System.out.println("diagonal: " + rect2.calculateDiagonal());
         rect2.toString();
-        rect2.equals(rect);
+        System.out.println("equals: " + rect2.equals(rect));
     }
 }

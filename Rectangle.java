@@ -33,7 +33,7 @@ public class Rectangle {
     }
 
     public int calculatePerimeter() {
-        int perimeter = length + width;
+        int perimeter = 2 * (length + width);
         return perimeter;
     }
 
