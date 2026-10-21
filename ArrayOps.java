@@ -17,7 +17,7 @@ public class ArrayOps {
         int[] newArray = new int[end - start];
         int count = 0;
         if (end <= start) {
-            return new int[0];
+            return new int[1];
         }
         for (int i = start; i < end; i++) {
             newArray[count] = i;
@@ -88,27 +88,10 @@ public class ArrayOps {
 
     // Read REQ 09
     public int[] removeAndShift(int[] nums, int index) {
-        nums[index] = 0;
-        if (index != 0) {
-            for (int i = 1; i < nums.length; i++) {
-                if (nums[i] != nums.length) {
-                    nums[i] = nums[i + 1];
-                }
-                else {
-                    nums[i] = 0;
-                }
-            }
+        for (int i = index; i < nums.length - 1; i++) {
+            nums[i] = nums[i + 1];
         }
-        else {
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] != nums.length) {
-                    nums[i] = nums[i + 1];
-                }
-                else {
-                    nums[i] = 0;
-                }
-            }
-        }
+        nums[nums.length - 1] = 0;
         return nums;
     }
 
